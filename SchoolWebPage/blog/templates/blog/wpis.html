@@ -1,0 +1,20 @@
+{% extends 'blog/home.html' %}
+
+
+{% block title %}
+Szkoła Podstawowa w Nowym Gliniku
+{% endblock %}
+{% block content %}
+<div class="trescwpisu" style="margin-left:25% ;margin-right: 30%;margin-top: 80px;">
+{% for w in wpis %}
+    <center>
+    <div >
+        
+        <h1 class ="wpisTytul"><a class="wpisTytul" href="{% url 'wpis' pk=w.pk %}" >{{ w.tytul }}</a></h1>
+        <h4 style="text-align:justify;margin-top: 30px;margin-bottom: 100px;">{{w.opis}}</h4>
+    </div>
+    </center>
+
+{% endfor %}
+</div>
+{% endblock %}

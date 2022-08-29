@@ -1,0 +1,20 @@
+{% extends 'blog/home.html' %}
+
+{% block content %}
+
+{% for w in wpis %}
+<center>
+    <div style="margin-left:25% ;margin-right: 30%;margin-top: 100px;margin-bottom: 80px;" >
+        <img style="width:450px;height:300px;margin-bottom: 50px;" src="{{w.zdjecie.url}}"> 
+        <h1 style ='margin-bottom: 40px;'>{{w.tytul}}</h1>
+        <p style="text-align: justify;">{{w.tresc|safe|escape}}</p>
+        <p style="float: right;">data publikacji: {{w.data_publikacji|date}}</p>
+        <br>
+        
+
+    </div>
+</center>
+{% endfor %}
+
+
+{% endblock %}

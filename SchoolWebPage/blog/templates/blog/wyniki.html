@@ -1,0 +1,49 @@
+{% extends "blog/home.html" %}
+
+{% block title %}
+Wyniki Ankiety
+{% endblock %}
+{% block content %}
+<div class = trescwpisu style = 'margin-left: 25%;margin-right: 30%;margin-top: 80px;margin-bottom: 40px;'>
+    <center>
+        <div class = "container", style = "width: 400px;">
+            <table class = "table table-stripped">
+                <thead>
+                    <tr>
+                        <th>Pytanie</th>
+                        <th>Odpowiedz</th>
+                        <th>Ile odpowiedz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if df %}
+                    {% for i in df %}
+                    <tr>
+                        <td>{{i.pytanie}}</td>
+                        <td>{{i.odpowiedz}}</td>
+                        <td>{{i.count}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </center>
+
+
+
+</div>
+
+<div style = 'text-align: justify;margin-left: 30%;'>
+    {% for i in graph %}
+        <div style="margin-top: 100px;">
+            <img src="data:image/png;base64,{{i}}" height="auto", width="auto">
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

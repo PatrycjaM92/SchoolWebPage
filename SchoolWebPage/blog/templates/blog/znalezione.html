@@ -1,0 +1,41 @@
+{% extends 'blog/home.html' %}
+
+
+{% block title %}
+Biblioteka Szkolna w Nowym Gliniku
+{% endblock %}
+{% block content %}
+<center>
+    <div>
+        <h1 class = "topBiblioteka">Biblioteka Szkolna w Nowym Glinku </h1>
+        <h2 class="sprawdz">Sprawdź czy znajdziesz swoją ulubioną książkę w naszej bibliotece</h2>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'biblioteka' %}">
+            <input class="form-control mr-sm-2" type="search"   placeholder="Search" aria-label="Search" name="search">    
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+     </div>
+    {% if ksiazki %}
+        <div style ='margin-top: 50px;'>
+            <h3 style="margin-bottom:20px">Znaleziono:</h3>
+        </div>
+    {% else %}
+        <div style ='margin-top: 50px;'>
+            <h3 style="margin-bottom:20px">Brak książki o podanym tytule</h3>
+        </div>
+    {% endif %}
+    {% for k in ksiazki %}
+        <div>
+            
+            <p style="font-size:14pt;"><mark><b>{{k.tytul}}</b> </mark>&nbsp;&nbsp;Autor: {{k.autor}}</p>
+            
+        </div>
+    {% endfor %}
+
+
+
+</center>
+
+
+
+
+{% endblock %}

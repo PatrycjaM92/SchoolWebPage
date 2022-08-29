@@ -1,0 +1,21 @@
+{% extends 'blog/home.html' %}
+
+{% block content %}
+<center>
+    <div class="row" style = 'margin-left: 20%;margin-top: 30px;margin-right: 20%;'>
+        {% for x in zdjecia %}
+        <div class="col-sm-4">
+        <div class="thumbnail">
+            <a href="{{ x.image.url }}">
+            <img src="{{ x.image.url }}"  alt="Lights" style="width:80%">
+            <div class="caption">
+                <p>{{ x.tytul }}</p>
+            </div>
+            </a>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</center>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'blog/home.html' %}
+
+{% block content %}
+
+<div>
+    <h1></h1>
+</div>
+
+<center>
+    <h1 class="ankieta">Ankieta</h1>
+</div>
+<div class="ankiet">
+    
+    <form method="post",action=''>
+        {% csrf_token %}
+        {% for q in questions %}
+          
+                <div class="form-group">
+                    <label for="question">{{q.id}}. {{q.pytanie}}</label>
+                <br>
+                </div>
+                <div class="form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.pytanie}}" id="gridRadios1" value="{{q.opcja1}}" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            {{q.opcja1}}
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.pytanie}}" id="gridRadios2" value="{{q.opcja2}}">
+                        <label class="form-check-label" for="gridRadios2">
+                            {{q.opcja2}}
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.pytanie}}" id="gridRadios1" value="{{q.opcja3}}">
+                        <label class="form-check-label" for="gridRadios1">
+                            {{q.opcja3}}
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.pytanie}}" id="gridRadios2" value="{{q.opcja4}}">
+                        <label class="form-check-label" for="gridRadios2">
+                            {{q.opcja4}}
+                        </label> 
+                    </div>
+                    <br>
+                    
+                </div> 
+       
+                
+      
+            
+               <br>
+        {% endfor %}
+        <button type="submit" class="btn btn-success" style ="margin-bottom: 50px;" >Wyślij</button>
+    </form>
+
+</center>
+
+{% endblock %}

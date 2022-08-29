@@ -1,0 +1,24 @@
+{% extends 'blog/home.html' %}
+
+
+{% block title %}
+Biblioteka Szkolna w Nowym Gliniku
+{% endblock %}
+{% block content %}
+<center>
+    <div style = "margin-top: 50px; margin-bottom: 50px;">
+        <h2>Dokumenty do Pobrania</h2>
+    </div>
+    <div>
+        {% for d in dokumenty %}
+        <a href="{{ MEDIA_URL }}{{d.plik.url}}" target="blank">RODO</a>
+        {% endfor %}
+     
+    </div>
+
+</center>
+
+
+
+
+{% endblock %}

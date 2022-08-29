@@ -1,0 +1,23 @@
+{% extends 'blog/home.html' %}
+
+
+{% block title %}
+Biblioteka Szkolna w Nowym Gliniku
+{% endblock %}
+{% block content %}
+<center>
+    <div>
+        <h1 class = 'topBiblioteka'>Biblioteka Szkolna w Nowym Glinku </h1>
+        <h2 class ='sprawdz'>Sprawdź czy znajdziesz swoją ulubioną książkę w szkolnej bibliotece</h2>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'biblioteka' %}">
+            <input class="form-control mr-sm-2" type="search"   placeholder="Wpisz tytuł" aria-label="Search" name="search">    
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
+          </form>
+        
+
+</center>
+
+
+
+
+{% endblock %}
